@@ -25,4 +25,3 @@ Each messages are store as xml regarding the scheme below :
 
 Restore not implemented yet.
 
-# kaiosapp

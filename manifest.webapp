@@ -1,16 +1,17 @@
 {
-  "name": "SMS Backup/Restore",
+  "name": "SMS Backup",
   "description": "Backup/Restore SMS to the SD card",
-    "icons": {
-    "128": "/logo128.png"
-  },
-  "type": "web",
+  "type": "certified",
   "launch_path": "/index.html",
   "developer": {
     "name": "AB",
     "url": "http://google.com"
   },
   "permissions": {
-    "sms": {}
+    "contacts":{ "access": "readwrite" },
+    "settings":{ "access": "readonly" },
+    "sms": {},
+    "storage": {},
+    "device-storage:sdcard": { "access": "readcreate" }
   }
 }
