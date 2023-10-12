@@ -60,7 +60,11 @@ function MessagesBackupRestoreApp() {
         return;
       }
 
-      console.warn("domCursor=" + domCursor);
+      console.warn("domCursor=" + domCursor.result);
+
+      if(foundSmsCount == 1){
+        alert(domCursor.result)
+      }
 
       var xmlMessage = global.BuildXMLMessage(domCursor.result);
       messages.push(xmlMessage);
