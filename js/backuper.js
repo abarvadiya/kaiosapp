@@ -40,14 +40,16 @@ function MessagesBackupRestoreApp() {
    * Backup messages
    */
   this.BackupMessages = function () {
-    alert("Starting BackupMessages!");
+    // alert("Starting BackupMessages!");
 console.log(window.navigator,">>>>>>>>>>>>>>");
     // Get message manager
     var smsManager =
       window.navigator.mozSms || window.navigator.mozMobileMessage;
 
+alert(JSON.stringify(smsManager),">>>>>>>>>>>>>>>");
     // Get read messages
     var request = smsManager.getMessages(null, false);
+    
     // alert(JSON.stringify(request.result));
 
     // Process messages
