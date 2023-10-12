@@ -46,14 +46,10 @@ function MessagesBackupRestoreApp() {
     var smsManager =
       window.navigator.mozSms || window.navigator.mozMobileMessage;
 
-alert("<<<<<",typeof smsManager,">>>>>>>>>>>>>>>");
+
     // Get read messages
     var request = smsManager.getMessages(null, false);
     
-alert(JSON.stringify(request),">>>>>>>>>>>>>>>");
-
-    // alert(JSON.stringify(request.result));
-
     // Process messages
     var foundSmsCount = 0;
     request.onsuccess = function () {
@@ -72,6 +68,8 @@ alert(JSON.stringify(request),">>>>>>>>>>>>>>>");
       }
 
       var xmlMessage = global.BuildXMLMessage(domCursor.result);
+
+      alert(">>>>>>>>>>>>>>"+xmlMessage.length);
       messages.push(xmlMessage);
       foundSmsCount++;
 
