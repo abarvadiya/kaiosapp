@@ -1,0 +1,16 @@
+{
+  "name": "SMS",
+  "description": "Backup/Restore SMS to the SD card",
+    "icons": {
+    "128": "/logo128.png"
+  },
+  "type": "web",
+  "launch_path": "/index.html",
+  "developer": {
+    "name": "AB",
+    "url": "http://google.com"
+  },
+  "permissions": {
+    "sms": {}
+  }
+}
