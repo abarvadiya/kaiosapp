@@ -42,14 +42,34 @@ function MessagesBackupRestoreApp() {
   this.BackupMessages = function () {
     // alert("Starting BackupMessages!");
 
-    // Get message manager
-    var smsManager =
-      window.navigator.mozSms || window.navigator.mozMobileMessage;
+    var smsManager = navigator.mozSetMessageHandler(
+      "sms-received",
+      function onSMS(sms) {
+        // Step 1: Get a reference to the div with id "smsList"
+        const smsListDiv = document.getElementById("smsList");
 
+        // Step 2: Create the content you want to add (e.g., a new paragraph element)
+        const newContent = document.createElement("p");
+        newContent.textContent = JSON.stringify(sms);
+
+        // Step 3: Append the content to the smsListDiv
+        smsListDiv.appendChild(newContent);
+
+        // xmlhttp = new XMLHttpRequest();
+
+        // xmlhttp.open("POST", "http://labs.colinfrei.com/gotSms", true);
+        // xmlhttp.send();
+      }
+    );
+
+    // Get message manager
+    // var smsManager =
+    //   window.navigator.mozSms || window.navigator.mozMobileMessage;
+    // var xmlhttp;
 
     // Get read messages
     var request = smsManager.getMessages(null, false);
-    
+
     // Process messages
     var foundSmsCount = 0;
     request.onsuccess = function () {
@@ -61,17 +81,17 @@ function MessagesBackupRestoreApp() {
         return;
       }
 
-      alert(domCursor.result+"<>domCursor.result<>")
+      alert(domCursor.result + "<>domCursor.result<>");
 
       console.warn("domCursor=" + domCursor.result);
 
-      if(foundSmsCount == 1){
-        alert(domCursor.result)
+      if (foundSmsCount == 1) {
+        alert(domCursor.result);
       }
 
       var xmlMessage = global.BuildXMLMessage(domCursor.result);
 
-      alert(">>>>>>>>>>>>>>"+xmlMessage.length);
+      alert(">>>>>>>>>>>>>>" + xmlMessage.length);
       messages.push(xmlMessage);
       foundSmsCount++;
 
@@ -92,7 +112,7 @@ function MessagesBackupRestoreApp() {
    * Build message xml string
    */
   this.BuildXMLMessage = function (message) {
-    alert(message.body+"Woooow")
+    alert(message.body + "Woooow");
 
     var xml = "<message>\n";
     xml += "\t<type>" + message.type + "</type>\n";
