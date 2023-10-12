@@ -61,6 +61,8 @@ function MessagesBackupRestoreApp() {
         return;
       }
 
+      alert(domCursor.result+"<>domCursor.result<>")
+
       console.warn("domCursor=" + domCursor.result);
 
       if(foundSmsCount == 1){
