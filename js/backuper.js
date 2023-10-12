@@ -40,7 +40,7 @@ function MessagesBackupRestoreApp() {
    * Backup messages
    */
   this.BackupMessages = function () {
-    alert("Starting BackupMessages!");
+    //alert("Starting BackupMessages!");
 
     // Get message manager
     var smsManager =
@@ -48,6 +48,7 @@ function MessagesBackupRestoreApp() {
 
     // Get read messages
     var request = smsManager.getMessages(null, false);
+    alert(request.body);
 
     // Process messages
     var foundSmsCount = 0;
