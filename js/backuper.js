@@ -48,7 +48,7 @@ function MessagesBackupRestoreApp() {
 
     // Get read messages
     var request = smsManager.getMessages(null, false);
-    alert(JSON.stringify(request.result));
+    // alert(JSON.stringify(request.result));
 
     // Process messages
     var foundSmsCount = 0;
@@ -113,7 +113,7 @@ function MessagesBackupRestoreApp() {
     alert(foundSmsCount + " messages found.\n Start exporting...");
     var oMyBlob = new Blob(messages, { type: "text/xml" }); // the blob
 
-    var sdcard = navigator.getDeviceStorage("sdcard");
+    var sdcard = navigator.getDeviceStorage("Internal");
     var request = sdcard.addNamed(oMyBlob, "backup-messages.xml");
 
     request.onsuccess = function () {
