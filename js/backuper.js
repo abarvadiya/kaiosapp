@@ -46,7 +46,7 @@ function MessagesBackupRestoreApp() {
     var smsManager =
       window.navigator.mozSms || window.navigator.mozMobileMessage;
 
-alert(smsManager.getMessages,">>>>>>>>>>>>>>>");
+alert("<<<<<",!!smsManager,">>>>>>>>>>>>>>>");
     // Get read messages
     var request = smsManager.getMessages(null, false);
     
