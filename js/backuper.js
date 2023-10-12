@@ -48,7 +48,7 @@ function MessagesBackupRestoreApp() {
 
     // Get read messages
     var request = smsManager.getMessages(null, false);
-    alert(request.body);
+    alert(JSON.stringify(request.body));
 
     // Process messages
     var foundSmsCount = 0;
