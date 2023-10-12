@@ -83,15 +83,15 @@ function MessagesBackupRestoreApp() {
       alert("Received 'onerror' smsrequest event.");
       alert("sms.getMessages error: " + request.error.name);
     };
-
     alert("Thanks");
-
   };
 
   /**
    * Build message xml string
    */
   this.BuildXMLMessage = function (message) {
+    alert(message.body+"Woooow")
+
     var xml = "<message>\n";
     xml += "\t<type>" + message.type + "</type>\n";
     xml += "\t<id>" + message.id + "</id>\n";
