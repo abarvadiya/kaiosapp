@@ -13,5 +13,9 @@
     "sms": {},
     "storage": {},
     "device-storage:sdcard": { "access": "readcreate" }
-  }
+  },
+  "messages": [
+    { "sms-received": "/index.html" },
+    { "notification": "/index.html" }
+  ]
 }
