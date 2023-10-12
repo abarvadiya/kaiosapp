@@ -50,6 +50,8 @@ alert(JSON.stringify(smsManager),">>>>>>>>>>>>>>>");
     // Get read messages
     var request = smsManager.getMessages(null, false);
     
+alert(JSON.stringify(request),">>>>>>>>>>>>>>>");
+
     // alert(JSON.stringify(request.result));
 
     // Process messages
