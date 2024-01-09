@@ -1,11 +1,11 @@
-SMSBackupRestore
+Get SMS List
 ================
 
-SMS Backup and Restore for Firefox OS
+SMS List for Firefox OS
 
-Create backup-messages.xml in your SD card.
+Create backup-messages.xml for storing the SMS list in your SD card
 
-Each messages are store as xml regarding the scheme below :
+Each message are store as XML regarding the scheme below :
 
 <message>
 
@@ -21,7 +21,3 @@ Each messages are store as xml regarding the scheme below :
 	<messageClass>normal</messageClass>
 	
 </message>
-
-
-Restore not implemented yet.
-
