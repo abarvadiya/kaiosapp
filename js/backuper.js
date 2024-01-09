@@ -15,7 +15,7 @@ function MessagesBackupRestoreApp() {
   //-------------------------------------------------------------------------------------
   // OBJET INITIALISATION
   //-------------------------------------------------------------------------------------
-  alert("toto");
+  alert("Welcome to sms list");
   var global = this;
   var messages = [];
 
